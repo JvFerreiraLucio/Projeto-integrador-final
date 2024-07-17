@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Alunos</title>
+    <link href="lista.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Lista de Alunos</h2>
+
+        <!-- Campo de Pesquisa -->
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Pesquisar" id="searchInput">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" id="searchButton">Pesquisar</button>
+            </div>
+        </div>
+
+        <!-- Tabela de Alunos -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Curso Matriculado</th>
+                </tr>
+            </thead>
+            <tbody id="studentsTable">
+                <!-- Dados serão populados aqui dinamicamente -->
+            </tbody>
+        </table>
+
+        <!-- Botões -->
+        <div class="text-center mt-4">
+            <button class="btn btn-secondary" onclick="location.href='/login'">Voltar</button>
+            <button class="btn btn-primary" id="searchButtonBottom">Pesquisar</button>
+            <button class="btn btn-danger" id="deleteButton">Excluir</button>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Adiciona funcionalidade de pesquisa aos botões de pesquisa
+        document.getElementById('searchButton').onclick = function() {
+            searchStudents();
+        };
+        document.getElementById('searchButtonBottom').onclick = function() {
+            searchStudents();
+        };
+
+        // Função de pesquisa (a ser implementada)
+        function searchStudents() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let table = document.getElementById('studentsTable');
+            let rows = table.getElementsByTagName('tr');
+
+            for (let i = 0; i < rows.length; i++) {
+                let cols = rows[i].getElementsByTagName('td');
+                let match = false;
+                for (let j = 0; j < cols.length; j++) {
+                    if (cols[j].innerText.toLowerCase().indexOf(input) > -1) {
+                        match = true;
+                        break;
+                    }
+                }
+                rows[i].style.display = match ? '' : 'none';
+            }
+        }
+
+        // Função de exclusão (a ser implementada)
+        document.getElementById('deleteButton').onclick = function() {
+            // Implemente a lógica de exclusão aqui
+            alert('Função de exclusão ainda não implementada.');
+        };
+    </script>
+</body>
+</html>
+

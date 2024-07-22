@@ -40,6 +40,17 @@ h2 {
     text-align: center;
 }
 
+/* Garantir que todas as linhas tenham a mesma cor inicial */
+table.table-striped tbody tr {
+    background-color: #ffffff;
+}
+
+/* Estilo personalizado para a linha ativa */
+.table-active {
+    background-color: #c8e6c9 !important; /* Verde claro para indicar seleção */
+}
+
+
 /* Estilo para o campo de pesquisa */
 .input-group-append {
     cursor: pointer;

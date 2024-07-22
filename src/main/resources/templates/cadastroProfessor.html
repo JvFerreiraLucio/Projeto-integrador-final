@@ -36,18 +36,18 @@
 <body>
     <div class="container">
         <h1 class="text-center">Cadastrar Professor</h1>
-        <form id="add-teacher-form" action="process_teacher_registration.php" method="post">
+        <form id="add-professor-form">
             <div class="form-group">
-                <label for="teacherName">Nome:</label>
-                <input type="text" id="teacherName" class="form-control" name="teacherName" required>
+                <label for="nomeProfessor">Nome:</label>
+                <input type="text" id="nomeProfessor" class="form-control" name="nomeProfessor" required>
             </div>
             <div class="form-group">
-                <label for="teacherCPF">CPF:</label>
-                <input type="text" id="teacherCPF" class="form-control" name="teacherCPF" required>
+                <label for="cpfProfessor">CPF:</label>
+                <input type="text" id="cpfProfessor" class="form-control" name="cpfProfessor" required>
             </div>
             <div class="form-group">
-                <label for="teacherSubject">Disciplina:</label>
-                <input type="text" id="teacherSubject" class="form-control" name="teacherSubject" required>
+                <label for="disciplina">Disciplina:</label>
+                <input type="text" id="disciplina" class="form-control" name="disciplina" required>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
             <button type="button" class="btn btn-secondary btn-block mt-2" onclick="window.location.href='/login'">Voltar</button>
